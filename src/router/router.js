@@ -15,9 +15,30 @@ export const page404 = {
     },
     component: () => import('@/views/error-page/404.vue')
 };
+export const page403 = {
+    path: '/403',
+    meta: {
+        title: '403-权限不足'
+    },
+    name: 'error-403',
+    component: () => import('@/views/error-page/403.vue')
+};
+
+//作为main组件的子页面展示，但不在左侧菜单显示
+export const otherRouter={
+
+}
+
+//作为main组件的子页面展示并且在左侧菜单显示路由
+export const appRouter=[
+    
+]
 
 //所有路由都要下载routers里
 export const routers=[
     loginRouter,
+    otherRouter,
+    ...appRouter,
+    page403,    
     page404
 ]
