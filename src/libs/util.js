@@ -1,7 +1,7 @@
-import axios from 'axios';
-import env from '../../build/env';
-import semver from 'semver';
-import packjson from '../../package.json';
+// import axios from 'axios';
+// import env from '../../build/env';
+// import semver from 'semver';
+// import packjson from '../../package.json';
 
 let util={
 
@@ -10,6 +10,24 @@ util.title = function (title) {
     title=title || '临床试验';
     window.document.title = title;
 };
+
+util.inOf = function (arr, targetArr) {
+    let res = true;
+    arr.forEach(item=> {
+        if (targetArr.indexOf(item) < 0){
+            res = false;
+        }
+    });
+    return res;
+};
+
+util.oneOf = function (ele, targetArr) {
+    if(targetArr.indexOf(ele) >= 0){
+        return true;
+    }else {
+        return false;
+    }
+}
 
 util.getRouterObjByName = function (routers,name){
     if(!name || !routers ||!routers.length){
@@ -206,4 +224,6 @@ util.toDefaultPage = function (routers,name ,route, next){
         next();
     }
 };
+
+export default util;
 
