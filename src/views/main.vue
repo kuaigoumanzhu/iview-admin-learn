@@ -169,7 +169,17 @@ export default {
       return true;
     }
   },
-  watch: {},
+  watch: {
+    $route(to) {
+      this.$store.commit("setCurrentPageName", to.name);
+      let pathArr = util.setCurrentPath(this, to.name);
+      if (pathArr.length > 2) {
+        this.$store.commit("addOpenSubmenu", pathArr[1].name);
+      }
+      this.checkTag(to.name);
+      localStorage.currentPageName = to.name;
+    }
+  },
   mounted() {
     this.init();
   },

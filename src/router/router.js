@@ -45,12 +45,17 @@ export const appRouter=[
     {
         path: '/international',
         icon: 'earth',
-        title: {i18n: 'international'},
+        //title: {i18n: 'international'},
+        title: '基础数据',
         name: 'international',
         component: Main,
         children: [
             // { path: 'index', title: {i18n: 'international'}, name: 'international_index', component: () => import('@/views/international/international.vue') }
-            { path: 'index', title: '多语言', name: 'international_index', component: () => import('@/views/international/international.vue') }
+            //{ path: 'index', title: '多語言', name: 'international_index', component: () => import('@/views/international/international.vue') }
+            { path: 'role-manager', title: '角色', name: 'role-manager', component: () => import('@/views/base-data/role/role-manager.vue') },            
+            { path: 'user-manager', title: '用户', name: 'user-manager', component: () => import('@/views/base-data/user/user-manager.vue') },            
+            { path: 'event-repository', title: '事件库', name: 'event-repository', component: () => import('@/views/base-data/event-repository/event-repository-manager.vue') },            
+            { path: 'setting-manager', title: '设置', name: 'setting-manager', component: () => import('@/views/base-data/setting/setting-manager.vue') }            
         ]
     },
     {
@@ -64,7 +69,7 @@ export const appRouter=[
                 path: 'split-pane-page',
                 icon: 'ios-pause',
                 name: 'split-pane-page',
-                title: 'split-pane',
+                title: '方案',
                 component: () => import('@/views/blade-components/split-pane/split-pane-page.vue')
             }
         ]
@@ -73,7 +78,7 @@ export const appRouter=[
         path: '/advanced-router',
         icon: 'ios-infinite',
         name: 'advanced-router',
-        title: '高级路由',
+        title: '项目',
         component: Main,
         children: [
             { path: 'mutative-router', title: '动态路由', name: 'mutative-router', icon: 'link', component: () => import('@/views/advanced-router/mutative-router.vue') },
