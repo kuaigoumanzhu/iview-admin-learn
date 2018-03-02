@@ -25,6 +25,12 @@ export const page403 = {
     component: () => import('@/views/error-page/403.vue')
 };
 
+export const locking = {
+    path: '/locking',
+    name: 'locking',
+    component: () => import('@/views/main-components/lockscreen/components/locking-page.vue')
+};
+
 //作为main组件的子页面展示，但不在左侧菜单显示
 export const otherRouter={
     path: '/',
@@ -90,6 +96,7 @@ export const appRouter=[
 //所有路由都要下载routers里
 export const routers=[
     loginRouter,
+    locking,
     otherRouter,
     ...appRouter,
     page403,    
