@@ -50,6 +50,7 @@ export default {
     },
     props: {
         pageTagsList: Array,
+        // prop验证 instanceof检测
         beforePush: {
             type: Function,
             default: (item) => {

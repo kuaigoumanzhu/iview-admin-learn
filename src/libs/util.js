@@ -210,6 +210,7 @@ util.toDefaultPage = function (routers,name ,route, next){
     let i = 0;
     let notHandle = true;
     while (i < len) {
+        // 为支持二级菜单，如果路由名等于父路由名且有子路由并且没有跳转则使用子路由第一个跳转
         if (routers[i].name === name && routers[i].children && routers[i].redirect === undefined) {
             route.replace({
                 name: routers[i].children[0].name
