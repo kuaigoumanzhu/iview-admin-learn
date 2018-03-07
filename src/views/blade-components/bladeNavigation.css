@@ -49,6 +49,7 @@
   white-space: nowrap;
   word-spacing: 0;
   float: left;
+  margin-right: 10px
 }
 
 /* Blades */
@@ -63,13 +64,13 @@
 .blade .blade-head,
 .blade .blade-container {
   font-family: "Exo 2";
-  -webkit-box-shadow: -8px 0 0 0 rgba(0, 0, 0, 0.2) inset;
-  box-shadow: -8px 0 0 0 rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: -8px 0 0 0 rgba(0, 0, 0, 0.1) inset;
+  box-shadow: -8px 0 0 0 rgba(0, 0, 0, 0.1) inset;
 }
 
 .blade .blade-head {
-  background: #333;
-  height: 132px;
+  background: #2c5188;
+  height: 145px;
   min-width: 300px;
   padding: 25px 0 5px;
   position: relative;
@@ -77,6 +78,11 @@
   box-sizing: border-box;
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
+}
+
+
+.blade-nav{
+  text-align: right
 }
 .blade-head .blade-nav {
   height: 25px;
@@ -88,7 +94,7 @@
 }
 
 .blade-nav .menu {
-  background: #232323;
+  background: #4b72b4;
   position: relative;
 }
 
@@ -97,11 +103,13 @@
   border: none;
   cursor: pointer;
   font-size: 0;
-  height: 25px;
+  height: 40px;
   line-height: 1.4;
   position: relative;
   width: 35px;
   z-index: 250;
+  margin-right: 10px;
+  top: 7px
 }
 
 .blade-nav .menu-item.__close {
@@ -178,7 +186,7 @@
 .blade-head .blade-t {
   color: #fff;
   left: 0;
-  margin: 10px 20px;
+  margin: 0 20px;
   min-height: 34px;
   padding: 0 0 0 60px;
   position: absolute;
@@ -203,8 +211,7 @@
 }
 
 .blade-t .blade-t_head {
-  font-size: 18px;
-  margin: 6px 0 0;
+  font-size: 20px;
 }
 
 .blade-t.__secondary .blade-t_head {
@@ -218,17 +225,14 @@
 }
 
 .blade-head .blade-toolbar {
-  background: #333;
-  border-top: 1px solid #3d3d3d;
+  background: #2c5188;
+  border-top: 1px solid rgba(0, 51, 102, 0.4);
   left: 0;
   overflow: hidden;
   position: absolute;
   right: 8px;
-  top: 79px;
+  top: 73px;
   z-index: 50;
-  -webkit-box-shadow: 0 1px 0 #2b2b2b inset;
-  box-shadow: 0 1px 0 #2b2b2b inset;
-  -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
 }
 
@@ -256,6 +260,7 @@
 .blade-toolbar .menu {
   margin: 0 0 0 10px;
   white-space: normal;
+  margin-top: 10px
 }
 
 .menu.__more .menu-item {
@@ -275,7 +280,7 @@
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
   display: block;
   padding: 0 10px;
@@ -321,6 +326,7 @@
 .blade .blade-content {
   width: 520px;
   white-space: normal;
+  height: 950px;
 }
 
 .blade.__active .blade-content {

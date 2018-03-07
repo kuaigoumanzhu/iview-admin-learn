@@ -1,34 +1,30 @@
 <template>
     <div>
-        <div class="blade" 
-            ref="wraper"
-            @mouseup="handleMouseup"
-            @mousemove="handleMousemove"
-            @mouseleave="handleMouseout">
-            <div class="blade-wrapper blade-content" :style="{width: leftSize}">
-                <header class="blade-head">
-                    <div class="blade-nav">
+        <div class="blade" ref="wraper">
+            <div class="blade-wrapper blade-content">
+                <div class="blade-nav">
                         <ul class="menu __inline">
                             <li class="menu-item __minimize" v-show="maximized">
                                 <button>最小化</button>
                             </li>
                             <li class="menu-item __maximize" v-show="!maximized">
-
+                                最大化
                             </li>
                             <li class="menu-item __close" @click="closeBlade" :class="{'__disabled':isClosingDisabled}">
 
                             </li>
                         </ul>
-                    </div>
+                </div>
+                <header class="blade-head">
                     <div class="blade-t">
-                        <i class="blade-t_ico ivu-icon ivu-icon-checkmark"></i>
+                        <i class="blade-t_ico ivu-icon ivu-icon-briefcase"></i>
                         <p class="blade-t_head">{{title}}</p>
                     </div>
                     <div class="blade-toolbar">
                         <ul class="menu __inline">
                             <li class="menu-item" v-for="toolbarCommand in toolbarCommands" :key="toolbarCommand.name">
                                 <button class="menu-btn" @click="emitBtn(toolbarCommand.executeMethod)">
-                                    <i class="menu-ico ivu-icon ivu-icon-checkmark"></i>
+                                    <i class="menu-ico" :class="toolbarCommand.icon"></i>
                                     {{toolbarCommand.name}}
                                 </button>
                             </li>
@@ -38,8 +34,6 @@
                 <div class="blade-container">
                     <slot></slot>
                 </div>
-            </div>
-            <div ref="trigger" class="custom-trigger" :style="{left: triggerLeft}" @mousedown="handleMousedown" unselectable="on">
             </div>
         </div>      
     </div>  
@@ -51,7 +45,7 @@ export default {
   props: {
       isClosingDisabled: {
           type: Boolean,
-          default: false
+          default: true
       },
       maximized: {
           type: Boolean,
@@ -61,7 +55,7 @@ export default {
   },
   data () {
       return {
-          title: '',
+          title: '修改',
           toolbarCommands: [],
           // split
 
@@ -105,7 +99,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "../module.css";
+@import "../bladeNavigation.css";
 
 .split-pane {
     position: relative;

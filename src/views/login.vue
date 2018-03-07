@@ -12,25 +12,41 @@
                 </p>
                 <div class="form-con">
                     <Form ref="loginForm" :model="form" :rules="rules">
+                        <div class="login-name">
+                            <h2>临床试验</h2>
+                            <div class="line-center"></div>
+                        </div>
                         <FormItem prop="userName">
                             <Input v-model="form.userName" placeholder="请输入用户名">
                                 <span slot="prepend">
-                                    <Icon :size="16" type="person"></Icon>
+                                    <Icon :size="18" type="person"></Icon>
                                 </span>
                             </Input>
                         </FormItem>
                         <FormItem prop="password">
                             <Input type="password" v-model="form.password" placeholder="请输入密码">
                                 <span slot="prepend">
-                                    <Icon :size="14" type="locked"></Icon>
+                                    <Icon :size="18" type="locked"></Icon>
                                 </span>
                             </Input>
                         </FormItem>
+                        <div class="remember-me checkbox">
+                            <label for="user_remember_me">
+                                <input name="user[remember_me]" value="0" type="hidden">
+                                <input class="remember-me-checkbox" value="1" name="user[remember_me]" id="user_remember_me" type="checkbox">
+                                <span>记住密码</span>
+                            </label>
+                            <div class="pull-right forgot-password">
+                                <a href="#">忘记密码？</a>
+                            </div>
+                        </div>
                         <FormItem>
                             <Button @click="handleSubmit" type="primary" long>登录</Button>
                         </FormItem>
                     </Form>
-                    <p class="login-tip">密码：123qwe</p>
+                    <p class="p-bottom-w3ls">
+                        <a href="signup.html">点击注册</a>     如果你没有一个帐户。
+                    </p>
                 </div>
             </Card>
         </div>

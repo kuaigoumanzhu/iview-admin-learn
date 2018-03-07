@@ -61,7 +61,8 @@ export const appRouter=[
             { path: 'role-manager', title: '角色', name: 'role-manager', component: () => import('@/views/base-data/role/role-manager.vue') },            
             { path: 'user-manager', title: '用户', name: 'user-manager', component: () => import('@/views/base-data/user/user-manager.vue') },            
             { path: 'event-repository', title: '事件库', name: 'event-repository', component: () => import('@/views/base-data/event-repository/event-repository-manager.vue') },            
-            { path: 'setting-manager', title: '设置', name: 'setting-manager', component: () => import('@/views/base-data/setting/setting-manager.vue') }            
+            { path: 'setting-manager', title: '设置', name: 'setting-manager', component: () => import('@/views/base-data/setting/setting-manager.vue') },
+            { path: 'sign-up',title: '登录注册', name: 'sign-up', component: ()=>import('@/views/signup.vue')}            
         ]
     },
     {

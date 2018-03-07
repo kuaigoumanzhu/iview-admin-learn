@@ -10,12 +10,12 @@ const blade = {
                         name:'修改',
                         executeMethod:'on-update',
                         canExecuteMethod:'true',
-                        icon: ''
+                        icon: 'ivu-icon ivu-icon-arrow-shrink'
                     },{
                         name:'添加',
                         executeMethod:'on-add',
                         canExecuteMethod:'true',
-                        icon: ''
+                        icon: 'ivu-icon ivu-icon-compose'
                     }
                 ],
                 blade2:[
